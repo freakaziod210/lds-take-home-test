@@ -10,16 +10,18 @@ const Container = styled("div")`
 const Subtitle = styled("div")`
   color: #97b4b9;
   font-size: 12px;
+  padding-bottom: 5px;
 `;
 
 const Title = styled("div")`
   color: #555555;
-  font-size: 18px;
+  font-size: 24px;
+  padding-bottom: 10px;
 `;
 
-const StyledDescription = styled("div")`
+const StyledDescription = styled("span")`
   color: #555555;
-  font-size: 14px;
+  font-size: 16px;
 `;
 
 const Description = props => (
