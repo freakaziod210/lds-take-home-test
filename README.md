@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-To run the code use the command `npm start`
+To run the code first use the command `npm i` to install all of the dependencies, then use the command `npm start` to run the server
 
 Technologies used:
 
