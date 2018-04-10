@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import Tile from "../Tile/Tile";
 import Images from "./Images/Images";
+import styled from "react-emotion";
+
 import photo01 from "../../assets/photo01.jpg";
 import photo02 from "../../assets/photo02.jpg";
 import photo03 from "../../assets/photo03.jpg";
@@ -84,18 +86,25 @@ const tile = {
   isStatic: true
 };
 
+const Container = styled("div")`
+  display: flex;
+  justify-content: center;
+`;
+
 const Article = props => {
   return (
-    <div>
-      <Images images={images} />
-      <Tile
-        url={tile.url}
-        title={tile.title}
-        subtitle={tile.subtitle}
-        description={tile.description}
-        isStatic={tile.isStatic}
-      />
-    </div>
+    <Container>
+      <div>
+        <Images images={images} />
+        <Tile
+          url={tile.url}
+          title={tile.title}
+          subtitle={tile.subtitle}
+          description={tile.description}
+          isStatic={tile.isStatic}
+        />
+      </div>
+    </Container>
   );
 };
 

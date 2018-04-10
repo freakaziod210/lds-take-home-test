@@ -4,26 +4,34 @@ import styled from "react-emotion";
 import Description from "../../Tile/Description/Description";
 
 const Container = styled("div")`
-  max-width: 800px;
+  width: 1000px;
   display: flex;
   flex-direction: column;
 `;
 
 const MainImage = styled("img")`
-  max-width: 800px;
-  max-height: 800px;
-  margin: 5px;
+  max-width: 1000px;
+  max-height: 600px;
+  padding-bottom: 5px;
+`;
+
+const BottomSection = styled("div")`
+  display: flex;
+`;
+
+const DescriptionWrapper = styled("div")`
+  margin-right: 5px;
 `;
 
 const ImageListWrapper = styled("div")`
   flex: 1;
   display: flex;
-  justify-content: space-between;
-  margin: 5px;
+  justify-content: flex-end;
 `;
 
 const Image = styled("img")`
   max-height: 40px;
+  margin-left: 5px;
 `;
 
 class Images extends Component {
@@ -41,14 +49,14 @@ class Images extends Component {
     return (
       <Container>
         <MainImage src={selectedImage.src} />
-        <div style={{ display: "flex" }}>
-          <div style={{ widht: 200 }}>
+        <BottomSection>
+          <DescriptionWrapper>
             <Description
               title={selectedImage.title}
               description={selectedImage.caption}
               isStatic={true}
             />
-          </div>
+          </DescriptionWrapper>
           <ImageListWrapper>
             {images.map(image => (
               <Image
@@ -58,7 +66,7 @@ class Images extends Component {
               />
             ))}
           </ImageListWrapper>
-        </div>
+        </BottomSection>
       </Container>
     );
   }
