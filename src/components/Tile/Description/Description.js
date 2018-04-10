@@ -15,8 +15,14 @@ const Subtitle = styled("div")`
 
 const Title = styled("div")`
   color: #555555;
-  font-size: 24px;
-  padding-bottom: 10px;
+  ${({ isStatic }) =>
+    isStatic
+      ? `font-size: 16px;
+         font-weight: 700;
+         padding-bottom: 5px;`
+      : `font-size: 24px;
+         font-weight: 400;
+         padding-bottom: 10px;`};
 `;
 
 const StyledDescription = styled("span")`
@@ -24,18 +30,19 @@ const StyledDescription = styled("span")`
   font-size: 16px;
 `;
 
-const Description = props => (
+const Description = ({ subtitle, title, description, isStatic }) => (
   <Container>
-    <Subtitle>{props.subtitle}</Subtitle>
-    <Title>{props.title}</Title>
-    <StyledDescription>{props.description}</StyledDescription>
+    {isStatic ? null : <Subtitle>{subtitle}</Subtitle>}
+    <Title isStatic={isStatic}>{title}</Title>
+    <StyledDescription>{description}</StyledDescription>
   </Container>
 );
 
 Description.propTypes = {
   subtitle: PropTypes.string,
   title: PropTypes.string.isRequired,
-  description: PropTypes.string
+  description: PropTypes.string,
+  isStatic: PropTypes.bool.isRequired
 };
 
 export default Description;
