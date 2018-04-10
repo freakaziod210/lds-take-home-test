@@ -35,6 +35,7 @@ const Description = ({ subtitle, title, description, isStatic }) => (
     {isStatic ? null : <Subtitle>{subtitle}</Subtitle>}
     <Title isStatic={isStatic}>{title}</Title>
     <StyledDescription>{description}</StyledDescription>
+    {isStatic ? <hr /> : null}
   </Container>
 );
 
