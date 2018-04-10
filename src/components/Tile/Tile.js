@@ -39,7 +39,11 @@ class Tile extends Component {
     const { url, title, subtitle, description, isStatic } = this.props;
 
     return (
-      <Container isPlaying={isPlaying} isStatic={isStatic}>
+      <Container
+        className="tile-component"
+        isPlaying={isPlaying}
+        isStatic={isStatic}
+      >
         <PlayerWrapper isPlaying={isPlaying} isStatic={isStatic}>
           <ReactPlayer
             url={url}
